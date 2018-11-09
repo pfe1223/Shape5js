@@ -1,1 +1,2 @@
 # Shape5js
+Shape5.js is a wrapper for [P5.js](https://www.p5js.org). You can try out Shape5.js [here](https://editor.p5js.org/patrick/sketches/ByAcAtJ6X). The idea behind is project is to reduce the learning curve for making static art with P5. 
