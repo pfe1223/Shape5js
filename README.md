@@ -20,7 +20,7 @@ The following shapes are available in Shape5.js. Please pay attention to the spe
 The pattern for creating a shape is to declare a variable, instantiate a shape with the variable, modify the shape, and finally draw the shape.
 
 ### Vocabulary Selection
-To avoid overloading P5 keywords, words like `spin`, `show` are used instead of `rotate` and `draw`. This was a conscious decision so that users will not think that the workings of Shapes.js are in alignment with P5.js. In P5.js, the `rotate` command rotates the contents of the `draw` function around the origin point. Shape5.js, however does not want to have to introduce users to `push`, `translate`, and `pop` in order to rotate a shape. In addition, users do not need to understand radians, they can express all rotations in terms of degrees.
+To avoid overloading P5 keywords, words like `spin`, `show`, and `stripe` are used instead of `rotate`, `draw`, and `line`. This was a conscious decision so that users will not think that the workings of Shapes.js are in alignment with P5.js. For example, the `rotate` command in P5.js rotates the contents of the `draw` function around the origin point. Shape5.js, however does not want to have to introduce users to `push`, `translate`, and `pop` in order to rotate a shape. In addition, users do not need to understand radians, they can express all rotations in terms of degrees.
 
 ### Shape Variable
 The shape variable can be global or local to the `draw` function. Global variables may help to reinforce more traditional coding practices. Using the global variable method is not necessary. It may prove to be more confusing for first-time coders since the shape must be instantiated in the `setup` function. Shape variables can also be declared and instantiated in a single line of code directly in the `draw` function. 
@@ -46,7 +46,7 @@ function setup() {
 }
 
 function draw() {
-  background('white');
+  background('black');
   
   box.x = 150;
   box.y = 300;
@@ -64,7 +64,7 @@ function setup() {
 }
 
 function draw() {
-  background('white');
+  background('black');
   
   let box = new Square();
   box.x = 150;
@@ -126,24 +126,38 @@ function draw() {
 	* _this.y_ - y-position of the shape
 	* _this.color_ - color of the shape, default is `'darkgray'`
 	* _this.spin_ - rotation of the shape, default is 0
-	* 
+	* _this.size_ - radius of the semicircle
+	* _this.degrees_ - angle of the semicircle; based on the `arc` command in P5; positive numbers draw the semicircle to the right, negative numbers to the left; semicircles begin from the 12 o'clock position
+	* This shape's position is located at the point of the semicircle
 * __Rhombus();__
 	* _this.x_ - x-position of the shape
 	* _this.y_ - y-position of the shape
 	* _this.color_ - color of the shape, default is `'darkgray'`
 	* _this.spin_ - rotation of the shape, default is 0
+	* _this.size_ - length of each side of the rhombus (equilateral polygon)
+	* _this.angle_ - size of two of the interior angles; the other two are calculated from this attribute
+	* The rhombus defaults to a diamond shape
+	* This shape's position is located at the center of the rhombus
 * __RightTriangle();__
 	* _this.x_ - x-position of the shape
 	* _this.y_ - y-position of the shape
 	* _this.color_ - color of the shape, default is `'darkgray'`
 	* _this.spin_ - rotation of the shape, default is 0
+	* _this.width_ - width of the triangle
+	* _this.height_ - height of the triangle
+	* This shape's position is located at 90° angle
 * __IsoscelesTriangle();__
 	* _this.x_ - x-position of the shape
 	* _this.y_ - y-position of the shape
 	* _this.color_ - color of the shape, default is `'darkgray'`
 	* _this.spin_ - rotation of the shape, default is 0
+	* _this.length_ - length of the two equal sides of the triangle
+	* _this.width_ - length of the third side of the triangle
+	* This shape's position is located at the midpoint of the unequal side of the triangle
 * __Stripe();__
 	* _this.x_ - x-position of the shape
 	* _this.y_ - y-position of the shape
 	* _this.color_ - color of the shape, default is `'darkgray'`
 	* _this.spin_ - rotation of the shape, default is 0
+	* _this.length_ - length of the line
+	* _this.width_ - stroke weight of the line
