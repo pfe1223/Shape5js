@@ -2,7 +2,7 @@ class Circle {
   constructor() {
     this.x = 200;
     this.y = 200;
-    this.r = 10;
+    this.size = 10;
     this.color = 'darkgray';
     this.spin = 0;
   }
@@ -15,7 +15,7 @@ class Circle {
     translate(this.x, this.y);
     rotate(this.spin);
     fill(this.color)
-    ellipse(0, 0, this.r*2);
+    ellipse(0, 0, this.size*2);
     pop();
   }
 }
